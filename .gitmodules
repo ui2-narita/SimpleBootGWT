@@ -1,0 +1,3 @@
+[submodule "gwt"]
+	path = gwt
+	url = https://github.com/ui2-narita/SimpleGWT.git
