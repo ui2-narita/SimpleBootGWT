@@ -11,7 +11,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 mainClassName       = 'jp.co.ui2.simple.App'
 
-defaultTasks 'clean', 'build'
+defaultTasks 'clean', 'build', 'copyGWT'
 
 repositories {
   mavenCentral()
@@ -57,4 +57,9 @@ jar {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.14'
+}
+
+task copyGWT(type: Copy) {
+  from 'gwt/war/simplegwt'
+  into 'static/simplegwt'
 }
