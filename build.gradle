@@ -5,7 +5,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'maven'
 apply plugin: 'lesscss'
 apply plugin: 'cargo'
-apply plugin:'application'
+apply plugin: 'application'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -17,11 +17,27 @@ repositories {
   mavenCentral()
 }
 
+bootRun {
+    addResources = true
+}
+
+springBoot {
+    backupSource = false
+}
+
 dependencies {
-  compileOnly'org.springframework.boot:spring-boot-configuration-processor'
-  compile localGroovy() , gradleApi() ,
+  compileOnly 'org.springframework.boot:spring-boot-configuration-processor',
+              'com.google.gwt:gwt-user:2.7.0',
+              'com.google.gwt:gwt-dev:2.7.0',
+              'org.fusesource.restygwt:restygwt:2.0.3'
+
+  compile project(':gwt'),
    'org.springframework.boot:spring-boot-starter-web',
-   'org.projectlombok:lombok:1.16.8'
+   'org.projectlombok:lombok:1.16.8',
+   'ch.qos.logback:logback-core:1.1.7',
+   'ch.qos.logback:logback-classic:1.1.7',
+   'org.slf4j:slf4j-api:1.7.21'
+   
   testCompile 'org.springframework.boot:spring-boot-starter-test' ,
    'junit:junit:4.+'
 }
