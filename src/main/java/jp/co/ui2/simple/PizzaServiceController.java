@@ -40,6 +40,7 @@ public class PizzaServiceController {
     confirmation.order    = order;
     confirmation.price    = 27.54;
     confirmation.ready_time = System.currentTimeMillis() + 1000 * 60 * 30; // in  30 min.
+    orders.add(confirmation);
     
     val headers = new HttpHeaders();
     headers.setLocation(uriComponentsBuilder.path("/pizza-service/{id}").buildAndExpand(orders.size()).toUri());
