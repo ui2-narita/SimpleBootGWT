@@ -18,11 +18,11 @@ repositories {
 }
 
 bootRun {
-    addResources = true
+  addResources = true
 }
 
 springBoot {
-    backupSource = false
+  backupSource = false
 }
 
 dependencies {
@@ -33,6 +33,8 @@ dependencies {
 
   compile project(':gwt'),
    'org.springframework.boot:spring-boot-starter-web',
+   'org.thymeleaf:thymeleaf-spring4',
+   'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect',
    'org.projectlombok:lombok:1.16.8',
    'ch.qos.logback:logback-core:1.1.7',
    'ch.qos.logback:logback-classic:1.1.7',
