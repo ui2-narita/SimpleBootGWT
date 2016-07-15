@@ -11,7 +11,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 mainClassName       = 'jp.co.ui2.simple.App'
 
-defaultTasks 'clean', 'build', 'copyGWT'
+defaultTasks 'clean', ':gwt:compileGwt', 'build', 'copyGWT'
 
 repositories {
   mavenCentral()
